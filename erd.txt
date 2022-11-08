@@ -1,0 +1,45 @@
+# Visualize on https://erd.surge.sh
+# or https://quick-erd.surge.sh
+#
+# Relationship Types
+#  -    - one to one
+#  -<   - one to many
+#  >-   - many to one
+#  >-<  - many to many
+#  -0   - one to zero or one
+#  0-   - zero or one to one
+#  0-0  - zero or one to zero or one
+#  -0<  - one to zero or many
+#  >0-  - zero or many to one
+#
+////////////////////////////////////
+
+
+user
+----
+id integer PK
+username text
+password_hash text
+
+
+question
+--------
+id integer PK
+content text
+user_id integer FK >- user.id
+
+
+answer
+------
+id integer PK
+name text
+user_id integer FK >- user.id
+
+
+qa_pair
+-------
+id integer PK
+question_id integer FK >- question.id
+answer_id integer FK >- answer.id
+user_id integer FK >- user.id
+match enum('t','f','na')
