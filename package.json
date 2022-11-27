@@ -13,7 +13,7 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/integer": "^4.0.1",
-    "@types/node": "^18.11.9",
+    "@types/node": "16",
     "quick-erd": "^3.4.4",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",

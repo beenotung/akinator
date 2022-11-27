@@ -29,7 +29,7 @@ export type QaPair = {
   answer?: Answer
   user_id: number
   user?: User
-  match: ('t' | 'f' | 'na')
+  match: ('t' | 'f' | 'tf' | 'na')
 }
 
 export type DBProxy = {

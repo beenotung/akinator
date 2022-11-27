@@ -42,4 +42,4 @@ id integer PK
 question_id integer FK >- question.id
 answer_id integer FK >- answer.id
 user_id integer FK >- user.id
-match enum('t','f','na')
+match enum('t','f','tf','na')

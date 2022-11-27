@@ -1,5 +1,4 @@
 import { find } from 'better-sqlite3-proxy'
-import { db } from './db'
 import { hashPassword } from './hash'
 import { proxy, QaPair } from './proxy'
 
@@ -67,20 +66,69 @@ async function main() {
   addPair({
     question: 'Is it playable?',
     answer: 'sushi',
-    match: 'na',
+    match: 'f',
   })
 
-  // console.log(proxy)
-  // console.log(proxy.qa_pair)
-  // console.log(proxy.qa_pair[1])
-  // console.log(proxy.qa_pair[1].answer_id)
-  // console.log(proxy.qa_pair[1].answer?.name)
+  addPair({
+    question: 'Is it sweet?',
+    answer: 'sushi',
+    match: 't',
+  })
+
+  addPair({
+    question: 'Is it spicy?',
+    answer: 'sushi',
+    match: 'tf',
+  })
+
+  addPair({
+    question: 'Is it spicy?',
+    answer: 'fish ball',
+    match: 'tf',
+  })
+
+  addPair({
+    question: 'Can it be purchased?',
+    answer: 'sushu',
+    match: 't',
+  })
+
+  addPair({
+    question: 'Can it be purchased?',
+    answer: 'fish ball',
+    match: 't',
+  })
+
+  addPair({
+    question: 'Can it be purchased?',
+    answer: 'akinator',
+    match: 'f',
+  })
+
+  addPair({
+    question: 'Can it be purchased?',
+    answer: 'memory',
+    match: 'f',
+  })
+
+  addPair({
+    question: 'Can it be experienced?',
+    answer: 'memory',
+    match: 't',
+  })
+
+  addPair({
+    question: 'Is it a food?',
+    answer: 'memory',
+    match: 'f',
+  })
 
   console.log(
     proxy.qa_pair.map(pair => ({
       id: pair.id,
       question: pair.question?.content,
       answer: pair.answer?.name,
+      match: pair.match,
     })),
   )
 }
